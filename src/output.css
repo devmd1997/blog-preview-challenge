@@ -1,4 +1,5 @@
 /*! tailwindcss v4.1.4 | MIT License | https://tailwindcss.com */
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -7,8 +8,13 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-gray-500: #6B6B6B;
+    --color-gray-950: #111111;
+    --color-white: #FFFFFF;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --color-yellow: #F4D04E;
+    --font-figtree: "Figtree", sans-serif;
   }
 }
 @layer base {
@@ -163,16 +169,117 @@
   .contents {
     display: contents;
   }
+  .flex {
+    display: flex;
+  }
   .table {
     display: table;
   }
+  .h-screen {
+    height: 100vh;
+  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .gap-y-\[16px\] {
+    row-gap: 16px;
+  }
+  .text-gray-500 {
+    color: var(--color-gray-500);
   }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
+}
+@layer base {
+  h1 {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 150%;
+    color: var(--color-gray-950);
+    font-family: var(--font-figtree);
+  }
+  body {
+    background-color: var(--color-yellow);
+  }
+}
+@layer components {
+  .card {
+    background-color: var(--color-white);
+    width: 384px;
+    border-radius: 20px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    padding: 24px;
+    gap: 24px;
+    box-shadow: 8px 8px 0px black;
+  }
+  .badge {
+    width: fit-content;
+    height: fit-content;
+    padding-inline: 12px;
+    padding-block: 4px;
+    background-color: var(--color-yellow);
+    border-radius: 4px;
+  }
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+  .profile-container {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    width: fit-content;
+    height: fit-content;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+.thumbnail-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+}
+.profile-image {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.text-preset-2 {
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--color-gray-950);
+  font-family: var(--font-figtree);
+  font-weight: 500;
+}
+.text-preset-3 {
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--color-gray-950);
+  font-family: var(--font-figtree);
+  font-weight: 500;
+}
+.text-preset-3-bold {
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--color-gray-950);
+  font-family: var(--font-figtree);
+  font-weight: 800;
 }
 @property --tw-rotate-x {
   syntax: "*";
